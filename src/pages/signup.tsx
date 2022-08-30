@@ -1,8 +1,37 @@
 import type { NextPage } from "next";
-import Image from "next/image";
+import Link from "next/link";
+import { CTAButton } from "../components/atoms/CTAButton";
+import { Logo } from "../components/atoms/Logo";
+import { StyledLink } from "../components/atoms/StyledLink";
+import { FormField } from "../components/FormField";
+import { HalfImageDashboardLayout } from "../components/HalfImageDashboardLayout";
+
+const signupImageProps = {
+  src: "/milada-vigerova-7E9qvMOsZEM-unsplash.jpg",
+  alt: "Cat on TV Stand by Milada Vigerova",
+};
 
 const Signup: NextPage = () => {
-  return <div></div>;
+  return (
+    <HalfImageDashboardLayout imageProps={signupImageProps}>
+      <Logo className="mt-16" />
+      <h1 className="mt-12 text-4xl leading-none font-semibold">Sign Up</h1>
+      <form className="mt-8">
+        <FormField label="Name:" inputId="name" inputType="text" />
+        <FormField label="Email:" inputId="email" inputType="email" />
+        <FormField label="Password:" inputId="password" inputType="password" />
+        <CTAButton className="mt-8 w-full" type="submit">
+          Sign Up
+        </CTAButton>
+      </form>
+      <p className="mt-8 text-sm leading-none">
+        Already have have an account?{" "}
+        <Link href="/login">
+          <StyledLink>Login</StyledLink>
+        </Link>
+      </p>
+    </HalfImageDashboardLayout>
+  );
 };
 
 export default Signup;
