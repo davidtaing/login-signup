@@ -103,6 +103,7 @@ const Login: NextPage = () => {
               alt="Dog at a Beach by Oscar Sutton"
               layout="fill"
               object-fit="cover"
+              priority
             />
           </div>
         </div>
