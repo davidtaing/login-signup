@@ -8,6 +8,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Poppins", sans-serif;
+  height: 100vh;
+  background-color: #e6eaf1;
 }
 
 a {
@@ -28,3 +30,15 @@ a {
     background: black;
   }
 } */
+
+.dashboard-container {
+  display: flex;
+  max-width: 1184px;
+  height: 100%;
+  margin-inline: auto;
+}
+
+.dashboard {
+  height: 768px;
+  margin: auto 0;
+}
