@@ -98,6 +98,7 @@ const Login: NextPage = () => {
           </div>
           <div className="w-50 relative -ml-4 -mr-8 col-start-7 col-end-13 rounded-r-lg overflow-hidden">
             <Image
+              className="transition duration-500 hover:scale-105"
               src="/oscar-sutton-yihlaRCCvd4-unsplash.jpg"
               alt="Dog at a Beach by Oscar Sutton"
               layout="fill"
