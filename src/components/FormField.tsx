@@ -1,5 +1,5 @@
 import { ErrorLabel } from "./atoms/ErrorLabel";
-import { Input } from "./atoms/Input";
+import { Input, PasswordInput } from "./atoms/Input";
 import { Label } from "./atoms/Label";
 
 interface FormFieldProps {
@@ -18,7 +18,13 @@ export const FormField = ({
   return (
     <div className="mt-4">
       <Label htmlFor={inputId}>{label}</Label>
-      <Input id={inputId} type={inputType} />
+
+      {inputType === "password" ? (
+        <PasswordInput id={inputId} />
+      ) : (
+        <Input id={inputId} type={inputType} />
+      )}
+
       <ErrorLabel className="h-3.5" htmlFor={inputId}>
         {error ?? ""}
       </ErrorLabel>

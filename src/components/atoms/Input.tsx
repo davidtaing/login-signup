@@ -1,8 +1,44 @@
+import React, { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+
 export const Input = (props: React.InputHTMLAttributes<HTMLInputElement>) => {
   return (
-    <input
-      {...props}
-      className={`${props.className} block mt-2 px-4 w-full h-8 border rounded border-stone-300 outline-blue-400`}
-    />
+    <div className={`${props.className} mt-2 w-full h-8 relative`}>
+      <input
+        {...props}
+        className="block px-4 h-full w-full border border-stone-300 rounded outline-blue-400"
+      />
+    </div>
+  );
+};
+
+export const PasswordInput = (
+  props: Omit<React.InputHTMLAttributes<HTMLInputElement>, "type">
+) => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const onPasswordToggle = () => {
+    setShowPassword(!showPassword);
+  };
+
+  return (
+    <div className={`${props.className} mt-2 w-full h-8 relative`}>
+      <input
+        {...props}
+        type={showPassword ? "password" : undefined}
+        className="block px-4 h-full w-full border border-stone-300 rounded outline-blue-400"
+      />
+      {showPassword ? (
+        <FaEyeSlash
+          className="absolute right-4 top-2 text-stone-300 hover:text-stone-700"
+          onClick={onPasswordToggle}
+        />
+      ) : (
+        <FaEye
+          className="absolute right-4 top-2 text-stone-300 hover:text-stone-700"
+          onClick={onPasswordToggle}
+        />
+      )}
+    </div>
   );
 };
