@@ -78,6 +78,17 @@ const Logo = ({ className }: { className: string }) => {
   );
 };
 
+const CTAButton = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => {
+  return (
+    <button
+      {...props}
+      className={`${props.className} h-8 text-sm leading-none rounded text-slate-50 bg-sky-600 hover:bg-sky-700`}
+    >
+      {props.children}
+    </button>
+  );
+};
+
 const Login: NextPage = () => {
   return (
     <div className="h-screen">
@@ -105,12 +116,9 @@ const Login: NextPage = () => {
                   </a>
                 </div>
               </div>
-              <button
-                className="mt-12 w-full h-8 text-sm leading-none rounded text-slate-50 bg-sky-600 hover:bg-sky-700"
-                type="submit"
-              >
+              <CTAButton className="mt-12 w-full" type="submit">
                 Login
-              </button>
+              </CTAButton>
             </form>
           </div>
           <div className="w-50 relative -ml-4 -mr-8 col-start-7 col-end-13 rounded-r-lg overflow-hidden">
