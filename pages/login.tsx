@@ -47,14 +47,20 @@ const FormField = ({ label, inputId, inputType, error }: FormFieldProps) => {
   );
 };
 
+const Logo = ({ className }: { className: string }) => {
+  return (
+    <div className={`${className} text-xl leading-none font-bold`}>
+      <span className="underline">Tee</span>ang
+    </div>
+  );
+};
+
 const Login: NextPage = () => {
   return (
     <div className="dashboard-container">
       <div className="dashboard bg-white h-full w-full px-8 grid grid-cols-12 gap-8 rounded-lg">
         <div className="col-start-1 col-end-7 p-8">
-          <div className="mt-16 text-xl leading-none font-bold">
-            <span className="underline">Tee</span>ang
-          </div>
+          <Logo className="mt-16" />
           <h1 className="mt-12 text-4xl leading-none font-semibold">Login</h1>
           <form className="mt-8">
             <FormField label="Email:" inputId="email" inputType="email" />
