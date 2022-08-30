@@ -89,51 +89,59 @@ const CTAButton = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => {
   );
 };
 
-const Login: NextPage = () => {
+const Dashboard = ({ children }: React.PropsWithChildren<{}>) => {
   return (
     <div className="h-screen">
       <div className="dashboard-container">
         <div className="dashboard bg-white h-full w-full px-8 grid grid-cols-12 gap-8 rounded-lg">
-          <div className="col-start-1 col-end-7 p-8">
-            <Logo className="mt-16" />
-            <h1 className="mt-12 text-4xl leading-none font-semibold">Login</h1>
-            <form className="mt-8">
-              <FormField label="Email:" inputId="email" inputType="email" />
-              <FormField
-                label="Password:"
-                inputId="password"
-                inputType="password"
-              />
-
-              <div className="mt-4 h-3.5 flex justify-between items-center">
-                <LabeledCheckbox label="Remember Me" inputId="remember-me" />
-                <div>
-                  <a
-                    className="text-sm inline-block leading-none text-sky-600 hover:text-sky-700"
-                    href="/forgot-password"
-                  >
-                    Forgot your password?
-                  </a>
-                </div>
-              </div>
-              <CTAButton className="mt-12 w-full" type="submit">
-                Login
-              </CTAButton>
-            </form>
-          </div>
-          <div className="w-50 relative -ml-4 -mr-8 col-start-7 col-end-13 rounded-r-lg overflow-hidden">
-            <Image
-              className="transition duration-500 hover:scale-105"
-              src="/oscar-sutton-yihlaRCCvd4-unsplash.jpg"
-              alt="Dog at a Beach by Oscar Sutton"
-              layout="fill"
-              object-fit="cover"
-              priority
-            />
-          </div>
+          {children}
         </div>
       </div>
     </div>
+  );
+};
+
+const Login: NextPage = () => {
+  return (
+    <Dashboard>
+      <div className="col-start-1 col-end-7 p-8">
+        <Logo className="mt-16" />
+        <h1 className="mt-12 text-4xl leading-none font-semibold">Login</h1>
+        <form className="mt-8">
+          <FormField label="Email:" inputId="email" inputType="email" />
+          <FormField
+            label="Password:"
+            inputId="password"
+            inputType="password"
+          />
+
+          <div className="mt-4 h-3.5 flex justify-between items-center">
+            <LabeledCheckbox label="Remember Me" inputId="remember-me" />
+            <div>
+              <a
+                className="text-sm inline-block leading-none text-sky-600 hover:text-sky-700"
+                href="/forgot-password"
+              >
+                Forgot your password?
+              </a>
+            </div>
+          </div>
+          <CTAButton className="mt-12 w-full" type="submit">
+            Login
+          </CTAButton>
+        </form>
+      </div>
+      <div className="w-50 relative -ml-4 -mr-8 col-start-7 col-end-13 rounded-r-lg overflow-hidden">
+        <Image
+          className="transition duration-500 hover:scale-105"
+          src="/oscar-sutton-yihlaRCCvd4-unsplash.jpg"
+          alt="Dog at a Beach by Oscar Sutton"
+          layout="fill"
+          object-fit="cover"
+          priority
+        />
+      </div>
+    </Dashboard>
   );
 };
 
