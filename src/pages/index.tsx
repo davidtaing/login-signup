@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import { Logo } from "../components/atoms/Logo";
 import { Dashboard } from "../components/Dashboard";
 
@@ -9,12 +10,16 @@ enum BUILT_WITH {
   TAILWIND = "Tailwind",
 }
 
-const loggedIn = false;
+const loggedIn = () => false;
 
 const Home: NextPage = () => {
   const router = useRouter();
 
-  if (!loggedIn) router.push("/login");
+  useEffect(() => {
+    if (!loggedIn()) {
+      router.push("/login");
+    }
+  }, [router]);
 
   return (
     <Dashboard>
