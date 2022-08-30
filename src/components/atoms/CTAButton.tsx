@@ -4,7 +4,7 @@ export const CTAButton = (
   return (
     <button
       {...props}
-      className={`${props.className} h-8 text-sm leading-none rounded text-slate-50 bg-sky-600 hover:bg-sky-700`}
+      className={`${props.className} h-8 px-4 text-sm leading-none rounded text-slate-50 bg-sky-600 hover:bg-sky-700`}
     >
       {props.children}
     </button>
