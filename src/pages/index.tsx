@@ -1,8 +1,7 @@
 import type { NextPage } from "next";
+import { useRouter } from "next/router";
 import { Logo } from "../components/atoms/Logo";
 import { Dashboard } from "../components/Dashboard";
-
-// TODO - Redirect if user is not logged in.
 
 enum BUILT_WITH {
   NEXTJS = "Next.js",
@@ -10,7 +9,13 @@ enum BUILT_WITH {
   TAILWIND = "Tailwind",
 }
 
+const loggedIn = false;
+
 const Home: NextPage = () => {
+  const router = useRouter();
+
+  if (!loggedIn) router.push("/login");
+
   return (
     <Dashboard>
       <div className="col-start-1 col-end-13 p-8">
