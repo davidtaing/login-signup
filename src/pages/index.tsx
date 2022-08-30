@@ -4,6 +4,12 @@ import { Dashboard } from "../components/Dashboard";
 
 // TODO - Redirect if user is not logged in.
 
+enum BUILT_WITH {
+  NEXTJS = "Next.js",
+  TYPESCRIPT = "Typescript",
+  TAILWIND = "Tailwind",
+}
+
 const Home: NextPage = () => {
   return (
     <Dashboard>
@@ -19,6 +25,16 @@ const Home: NextPage = () => {
         <h1 className="mt-12 text-4xl leading-none font-semibold">
           David&apos;s Super Secret Stuff
         </h1>
+        <p className="mt-9">
+          Built with:
+          <ul className="pl-10">
+            {Object.values(BUILT_WITH).map((item) => (
+              <li key={item} className="list-disc">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </p>
       </div>
     </Dashboard>
   );
