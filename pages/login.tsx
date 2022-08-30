@@ -47,6 +47,29 @@ const FormField = ({ label, inputId, inputType, error }: FormFieldProps) => {
   );
 };
 
+interface LabeledCheckboxProps {
+  label: string;
+  inputId: string;
+}
+
+const LabeledCheckbox = ({ label, inputId }: LabeledCheckboxProps) => {
+  return (
+    <div className="flex">
+      <input
+        id={inputId}
+        className="border border-stone-300 my-auto h-3.5 w-3.5 "
+        type="checkbox"
+      />
+      <label
+        className="ml-2 inline-block text-sm leading-none"
+        htmlFor={inputId}
+      >
+        {label}
+      </label>
+    </div>
+  );
+};
+
 const Logo = ({ className }: { className: string }) => {
   return (
     <div className={`${className} text-xl leading-none font-bold`}>
@@ -71,19 +94,7 @@ const Login: NextPage = () => {
             />
 
             <div className="mt-4 h-3.5 flex justify-between items-center">
-              <div className="flex">
-                <input
-                  id="remember-me"
-                  className="border border-stone-300 my-auto h-3.5 w-3.5 "
-                  type="checkbox"
-                />
-                <label
-                  className="ml-2 inline-block text-sm leading-none"
-                  htmlFor="remember-me"
-                >
-                  Remember Me
-                </label>
-              </div>
+              <LabeledCheckbox label="Remember Me" inputId="remember-me" />
               <div>
                 <a
                   className="text-sm inline-block leading-none text-sky-600 hover:text-sky-700"
