@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 const Label = (props: React.LabelHTMLAttributes<HTMLLabelElement>) => {
   return (
@@ -127,6 +128,15 @@ const HalfImageDashboardLayout = ({
   );
 };
 
+const StyledLink = (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
+  return (
+    <a
+      {...props}
+      className={`${props.className} text-sm inline-block leading-none text-sky-600 hover:text-sky-700 cursor-pointer`}
+    />
+  );
+};
+
 const loginImageProps = {
   src: "/oscar-sutton-yihlaRCCvd4-unsplash.jpg",
   alt: "Dog at a Beach by Oscar Sutton",
@@ -140,22 +150,24 @@ const Login: NextPage = () => {
       <form className="mt-8">
         <FormField label="Email:" inputId="email" inputType="email" />
         <FormField label="Password:" inputId="password" inputType="password" />
-
         <div className="mt-4 h-3.5 flex justify-between items-center">
           <LabeledCheckbox label="Remember Me" inputId="remember-me" />
           <div>
-            <a
-              className="text-sm inline-block leading-none text-sky-600 hover:text-sky-700"
-              href="/forgot-password"
-            >
-              Forgot your password?
-            </a>
+            <Link href="/forgot-password">
+              <StyledLink>Forgot your password?</StyledLink>
+            </Link>
           </div>
         </div>
         <CTAButton className="mt-12 w-full" type="submit">
           Login
         </CTAButton>
       </form>
+      <p className="mt-8 text-sm leading-none">
+        Don&apos;t have have an account yet?{" "}
+        <Link href="/signup">
+          <StyledLink>Signup</StyledLink>
+        </Link>
+      </p>
     </HalfImageDashboardLayout>
   );
 };
