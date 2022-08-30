@@ -32,7 +32,7 @@ const Login: NextPage = () => {
           Login
         </CTAButton>
       </form>
-      <p className="mt-8 text-sm leading-none">
+      <p className="mt-8 text-sm leading-none text-center">
         Don&apos;t have have an account yet?{" "}
         <Link href="/signup">
           <StyledLink>Signup</StyledLink>

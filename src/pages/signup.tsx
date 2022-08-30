@@ -24,7 +24,7 @@ const Signup: NextPage = () => {
           Sign Up
         </CTAButton>
       </form>
-      <p className="mt-8 text-sm leading-none">
+      <p className="mt-8 text-sm leading-none text-center">
         Already have have an account?{" "}
         <Link href="/login">
           <StyledLink>Login</StyledLink>
