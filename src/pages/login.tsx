@@ -16,7 +16,7 @@ const Login: NextPage = () => {
   return (
     <HalfImageDashboardLayout imageProps={loginImageProps}>
       <Logo className="mt-16" />
-      <h1 className="mt-12 text-4xl leading-none font-semibold">Login</h1>
+      <h1 className="mt-12 text-4xl leading-none font-medium">Login</h1>
       <form className="mt-8">
         <FormField label="Email:" inputId="email" inputType="email" />
         <FormField label="Password:" inputId="password" inputType="password" />

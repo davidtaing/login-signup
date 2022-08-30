@@ -15,7 +15,7 @@ const Signup: NextPage = () => {
   return (
     <HalfImageDashboardLayout imageProps={signupImageProps}>
       <Logo className="mt-16" />
-      <h1 className="mt-12 text-4xl leading-none font-semibold">Sign Up</h1>
+      <h1 className="mt-12 text-4xl leading-none font-medium">Sign Up</h1>
       <form className="mt-8">
         <FormField label="Name:" inputId="name" inputType="text" />
         <FormField label="Email:" inputId="email" inputType="email" />

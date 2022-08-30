@@ -13,7 +13,7 @@ const Home: NextPage = () => {
             <Logo />
           </div>
         </div>
-        <h1 className="mt-12 text-4xl font-semibold">Forgot your password?</h1>
+        <h1 className="mt-12 text-4xl font-medium">Forgot your password?</h1>
         <h2 className="mt-6 text-2xl font-stone-600">
           Too bad, ain&apos;t nothing you can do.
         </h2>

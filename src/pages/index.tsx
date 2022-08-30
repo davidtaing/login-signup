@@ -32,7 +32,7 @@ const Home: NextPage = () => {
             </button>
           </div>
         </div>
-        <h1 className="mt-12 text-4xl leading-none font-semibold">
+        <h1 className="mt-12 text-4xl leading-none font-medium">
           David&apos;s Super Secret Stuff
         </h1>
         <p className="mt-9">
