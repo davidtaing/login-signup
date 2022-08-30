@@ -18,8 +18,10 @@ export const HalfImageDashboardLayout = ({
           className="transition duration-500 hover:scale-105"
           src={imageProps.src}
           alt={imageProps.alt}
-          layout="fill"
-          object-fit="cover"
+          layout="responsive"
+          height="768px"
+          width="512px"
+          object-fit="scale-down"
           priority
         />
       </div>
