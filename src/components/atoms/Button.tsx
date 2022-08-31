@@ -1,3 +1,5 @@
+import { PropsWithVariant } from "../../types/ComponentProps";
+
 enum ButtonVariants {
   Common = "h-8 px-4 text-sm leading-none rounded",
   Base = "text-slate-700 hover:text-slate-900 border border-slate-400 hover:border-slate-700",
@@ -6,11 +8,6 @@ enum ButtonVariants {
 }
 
 type ButtonVariant = keyof typeof ButtonVariants;
-
-export type PropsWithVariant<P, V extends string> = P & {
-  variant?: V;
-};
-
 type ButtonProps = PropsWithVariant<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   ButtonVariant
