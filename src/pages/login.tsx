@@ -28,14 +28,8 @@ const Login: NextPage = () => {
             </Link>
           </div>
         </div>
-        <Button className="mt-12 w-full" type="submit">
-          Default
-        </Button>
         <Button className="mt-4 w-full" type="submit" variant="CTA">
           CTA
-        </Button>
-        <Button className="mt-4 w-full" type="submit" variant="Danger">
-          Danger
         </Button>
       </form>
       <p className="mt-8 text-sm leading-none text-center">
