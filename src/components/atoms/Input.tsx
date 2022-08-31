@@ -25,7 +25,7 @@ export const PasswordInput = (
     <div className={`${props.className} mt-2 w-full h-8 relative`}>
       <input
         {...props}
-        type={showPassword ? undefined : "password"}
+        type={showPassword ? "text" : "password"}
         className="block px-4 h-full w-full border border-stone-300 rounded outline-blue-400"
       />
       <div className="absolute right-4 top-2 text-stone-300 hover:text-stone-700">
