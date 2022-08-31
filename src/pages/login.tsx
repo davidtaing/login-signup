@@ -29,7 +29,7 @@ const Login: NextPage = () => {
           </div>
         </div>
         <Button className="mt-4 w-full" type="submit" variant="CTA">
-          CTA
+          Login
         </Button>
       </form>
       <p className="mt-8 text-sm leading-none text-center">
