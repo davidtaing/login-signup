@@ -28,17 +28,13 @@ export const PasswordInput = (
         type={showPassword ? undefined : "password"}
         className="block px-4 h-full w-full border border-stone-300 rounded outline-blue-400"
       />
-      {showPassword ? (
-        <FaEyeSlash
-          className="absolute right-4 top-2 text-stone-300 hover:text-stone-700"
-          onClick={onPasswordToggle}
-        />
-      ) : (
-        <FaEye
-          className="absolute right-4 top-2 text-stone-300 hover:text-stone-700"
-          onClick={onPasswordToggle}
-        />
-      )}
+      <div className="absolute right-4 top-2 text-stone-300 hover:text-stone-700">
+        {showPassword ? (
+          <FaEyeSlash onClick={onPasswordToggle} />
+        ) : (
+          <FaEye onClick={onPasswordToggle} />
+        )}
+      </div>
     </div>
   );
 };
