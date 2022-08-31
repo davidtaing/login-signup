@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Link from "next/link";
-import { CTAButton } from "../components/atoms/CTAButton";
+import { Button } from "../components/atoms/Button";
 import { Logo } from "../components/atoms/Logo";
 import { StyledLink } from "../components/atoms/StyledLink";
 import { FormField } from "../components/FormField";
@@ -28,9 +28,15 @@ const Login: NextPage = () => {
             </Link>
           </div>
         </div>
-        <CTAButton className="mt-12 w-full" type="submit">
-          Login
-        </CTAButton>
+        <Button className="mt-12 w-full" type="submit">
+          Default
+        </Button>
+        <Button className="mt-4 w-full" type="submit" variant="CTA">
+          CTA
+        </Button>
+        <Button className="mt-4 w-full" type="submit" variant="Danger">
+          Danger
+        </Button>
       </form>
       <p className="mt-8 text-sm leading-none text-center">
         Don&apos;t have have an account yet?{" "}
