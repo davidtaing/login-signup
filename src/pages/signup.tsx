@@ -20,7 +20,7 @@ const Signup: NextPage = () => {
         <FormField label="Name:" inputId="name" inputType="text" />
         <FormField label="Email:" inputId="email" inputType="email" />
         <FormField label="Password:" inputId="password" inputType="password" />
-        <Button className="mt-8 w-full" type="submit">
+        <Button variant="CTA" className="mt-8 w-full" type="submit">
           Sign Up
         </Button>
       </form>
